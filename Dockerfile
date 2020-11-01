@@ -1,8 +1,12 @@
-# 1. Base image
+# base image
 FROM python:3.8.3-slim-buster
 
-# 2. Copy files
+# allow git hash env var to be set by cli
+ARG GIT_HASH
+ENV GIT_HASH=${GIT_HASH:-dev}
+
+# copy current dir into /src
 COPY . /src
 
-# 3. Install our deps
+# install dependencies in /src
 RUN pip install -r /src/requirements.txt
