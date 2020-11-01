@@ -8,8 +8,8 @@ ENV GIT_HASH=${GIT_HASH:-dev}
 # specify base dir for all RUN, CMD, ENTRYPOINT, COPY, and ADD commands
 WORKDIR /project
 
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
 # copy current dir into work dir
 COPY . .
-
-# install dependencies in work dir
-RUN pip install -r requirements.txt
