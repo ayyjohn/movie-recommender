@@ -25,4 +25,5 @@ COPY . .
 
 USER user
 
+# prepend to startup command, so in this case "/tini -- python app.py"
 ENTRYPOINT ["/tini", "--"]
