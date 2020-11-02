@@ -7,7 +7,7 @@ ENV GIT_HASH=${GIT_HASH:-dev}
 ENV TINI_VERSION="v0.19.0"
 
 # add tini for better signal forwarding and zombie process cleanup
-ADD https://github.com/krallin/tini/releases/downloads/${TINI_VERSION}/tini/tini
+ADD https://github.com/krallin/tini/releases/downloads/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
 # specify base dir for all RUN, CMD, ENTRYPOINT, COPY, and ADD commands
