@@ -10,6 +10,12 @@ ENV TINI_VERSION="v0.19.0"
 ADD https://github.com/krallin/tini/releases/downloads/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
+# standard styling for list args
+RUN pip install -U \
+    pip \
+    setuptools \
+    wheel
+
 # specify base dir for all RUN, CMD, ENTRYPOINT, COPY, and ADD commands
 WORKDIR /project
 
